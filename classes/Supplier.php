@@ -14,8 +14,7 @@ class Supplier
 
   public function getSuppliers()
   {
-    $stmt = $this->pdo->prepare('SELECT * FROM `suppliers` ORDER BY
-`SupplierID` DESC');
+    $stmt = $this->pdo->prepare('SELECT * FROM `suppliers` ORDER BY `SupplierID` DESC');
     $stmt->execute();
     return $stmt->fetchAll();
   }

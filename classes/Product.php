@@ -17,8 +17,7 @@ class Product
 
   public function getProducts()
   {
-    $stmt = $this->pdo->prepare('SELECT * FROM `products` ORDER BY
-`ProductID` DESC');
+    $stmt = $this->pdo->prepare('SELECT * FROM `products` ORDER BY `ProductID` DESC');
     $stmt->execute();
     return $stmt->fetchAll();
   }
@@ -33,8 +32,7 @@ class Product
 
   public function saveProduct()
   {
-    $query = 'INSERT INTO `products` (`ProductName`, `SupplierID`,
-    `CategoryID`, `Unit`, `Price`)
+    $query = 'INSERT INTO `products` (`ProductName`, `SupplierID`, `CategoryID`, `Unit`, `Price`)
     VALUES(:ProductName, :SupplierID, :CategoryID, :Unit, :Price)';
     $values = [
       ':ProductName' => $this->name,

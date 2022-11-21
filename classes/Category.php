@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/Database.php';
 
-class Supplier
+class Category
 {
   private $pdo;
 
@@ -12,10 +12,9 @@ class Supplier
     $this->pdo = $db->connect();
   }
 
-  public function getSuppliers()
+  public function getCategories()
   {
-    $stmt = $this->pdo->prepare('SELECT * FROM `suppliers` ORDER BY
-`SupplierID` DESC');
+    $stmt = $this->pdo->prepare('SELECT * FROM `categories` ORDER BY `categoryID` DESC');
     $stmt->execute();
     return $stmt->fetchAll();
   }
